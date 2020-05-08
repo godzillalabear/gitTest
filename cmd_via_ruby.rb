@@ -1,15 +1,9 @@
 # cmd_via_ruby.rb
 
-dir_name = "tt5"
-# `pwd`
-# p "mkdir #{dir_name}"
-`mkdir #{dir_name}`
-`mkdir tt6`
-# exec("cd #{dir_name}")
-p `pwd`
+title = "abc"
+bare_repo_dir = "#{title}.git"
 
+full_dir = "/Users/godzillalabear/Documents/Astro_Camp/gitServer/#{bare_repo_dir}"
 
-# value = `ls -al`
-# value = `#{cmd}`
-# p value.class
-# p value
+`mkdir #{full_dir}`
+`git --bare init #{full_dir}`
