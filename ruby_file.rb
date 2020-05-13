@@ -3,14 +3,16 @@
 user_name = "merry"
 repo_title = "aabbcc"
 
-path = "/Users/godzillalabear/Documents/Astro_Camp/gitServer/#{user_name}/#{repo_title}"
+base_path = "/Users/godzillalabear/Documents/Astro_Camp/gitServer"
+@current_path = "./#{user_name}/#{repo_title}"
 
+Dir.chdir(base_path)
 
 @files = []
 @dirs = []
 
-Dir.entries(path).each do |file|
-  if File.file?(path+"/"+file)
+Dir.entries(@current_path).each do |file|
+  if File.file?(@current_path+"/"+file)
     @files << file
   else
     @dirs << file
