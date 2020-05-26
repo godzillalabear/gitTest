@@ -20,5 +20,22 @@ Dir.entries(@current_path).each do |file|
 end
 
 
-p @files
-p @dirs
+
+# p @files
+# p @dirs
+
+
+# Dir.chdir(@current_path){ p Dir.glob("*") }
+
+
+# d = Dir.new(base_path)
+# p d
+# p d.read
+
+
+File.readlines(@current_path+"/package.json", chomp: true).each do |line|
+  p line + "\\"
+end
+
+
+
