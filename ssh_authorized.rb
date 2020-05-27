@@ -6,8 +6,14 @@ file_local = File.open(file_local_path)
 
 file_remote_path = "/home/git/.ssh/authorized_keys"
 
-
+a = 0
 new_line = "\n"
-params = "my rsa key"
+File.write(file_local_path, "", mode: "w")
+while a < 5 do
+  a += 1
+  params = "my rsa key #{a}"
+  File.write(file_local_path, "#{params}#{new_line}", mode: "a")
+end
 
-File.write(file_local_path, "#{new_line}#{params}", mode: "a")
+# params = "my rsa key"
+# File.write(file_local_path, "#{params}#{new_line}", mode: "w")
